@@ -1,20 +1,20 @@
-import axios from 'axios'
-const local = 'http://localhost:5000'
-const production = 'https://bazario-api-backend.onrender.com/'
+import axios from 'axios';
 
-let api_url = ''
-let mode ='pro'
+const local = 'http://localhost:5000';
+const production = 'https://bazario-api-backend.onrender.com'; // no trailing slash
 
-if(mode === 'pro') {
-    api_url = production
+let api_url = '';
+let mode = 'pro';
+
+if (mode === 'pro') {
+  api_url = production;
 } else {
-    api_url = local
+  api_url = local;
 }
 
-
-
 const api = axios.create({
-    baseURL: `${api_url}/api`,
-    withCredentials: true,
-})
-export default api
+  baseURL: `${api_url}/api`,
+  withCredentials: true
+});
+
+export default api;
